@@ -21,6 +21,7 @@ const movieSchema = z.object({
 })
 
 export function validateMovie (object) {
+  // Este método devuelve un objeto que contiene los datos analizados correctamente o una instancia de ZodError con información detallada sobre los problemas de validación.
   return movieSchema.safeParse(object)
 }
 
