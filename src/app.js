@@ -58,6 +58,10 @@ app.patch('/movies/:id', (req, res) => {
   return res.json(updateMovie)
 })
 
+app.use((req, res) => {
+  res.status(404).json({ message: 'Ruta no encontrada 404' })
+})
+
 const port = process.env.PORT ?? 1234
 
 app.listen(port, () => {
