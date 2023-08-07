@@ -23,3 +23,8 @@ const movieSchema = z.object({
 export function validateMovie (object) {
   return movieSchema.safeParse(object)
 }
+
+export function validatePartialMovie (object) {
+  // partial()=hacer opcionales todos los campos
+  return movieSchema.partial().safeParse(object)
+}
